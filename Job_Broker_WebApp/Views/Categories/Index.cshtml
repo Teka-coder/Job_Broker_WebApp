@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Job_Broker_WebApp.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<center><h2>Category List</h2></center>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CATEGORY1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CATEGORY1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+   
+}
+
+</table>
+<div class="row">
+    <div class="col-sm-6">
+       
+        <button class="btn btn-default btn-block btn-flat">@Html.ActionLink("Add New", "Create")</button>
+    </div>
+    <div class="col-sm-6">
+        <button class="btn btn-default btn-block btn-flat">@Html.ActionLink("Back", "AdminDashBoard", "Admins")</button>
+      
+    </div>
+</div>

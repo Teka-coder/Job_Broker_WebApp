@@ -1,0 +1,208 @@
+﻿@model Job_Broker_WebApp.Models.Admin
+
+@{
+    Layout = null;
+    ViewBag.Title = "Autherize";
+}
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link href="~/Admin/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Admin/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Admin/plugins/ionicons/css/ionicons.css" rel="stylesheet" />
+    <link href="~/Admin/dist/css/admin-lte.css" rel="stylesheet" />
+    <link href="~/Admin/plugins/icheck/css/sqare/blue.css" rel="stylesheet" />
+
+</head>
+
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="@Url.Action("Autherize", "Admins")"><strong>በድጋሚ ስላገኘንዎት እናመሰግናለን!</strong><br /><b>ADMIN Login PAGE!</b></a>
+        </div>
+
+        @*@if (@ViewBag.Message != null)
+            {
+                <div style="border: 1px solid red">
+                    @ViewBag.Message Welcome to <b>Job Broker System!</b>
+                </div>
+            }*@
+        <div class="login-box-body">
+            <p class="login-box-msg" style="color:forestgreen">የይለፍ ቃልዎን አስገብተው ሲይስተሙን ያስተዳድሩ</p>
+            @using (Html.BeginForm("Autherize", "Admins", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(m => m.USERNAME, new { @class = "form-control", type = "text", placeholder = "User name" })
+                    @Html.ValidationMessageFor(m => m.USERNAME, "", new { @class = "text-danger" })
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    @Html.PasswordFor(m => m.PASSWORD, new { @class = "form-control", type = "password", placeholder = "Password" })
+                    @Html.ValidationMessageFor(m => m.PASSWORD, "", new { @class = "text-danger" })
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+
+                <div class="row">
+
+                  
+
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Log In</button>
+                        <button type="reset" class="btn btn-danger btn-block btn-flat">Clear</button>
+
+                    </div>
+                </div>
+            }
+            @*<div class="social-auth-links text-center">
+                    <p>- OR -</p>
+                    <a href="#" class="btn btn-block btn-social btn-facebook btn-flat">
+                        <i class="fa fa-facebook"></i> Sign in using
+                        Facebook
+                    </a>
+                    <a href="#" class="btn btn-block btn-social btn-google btn-flat">
+                        <i class="fa fa-google-plus"></i> Sign in using
+                        Google+
+                    </a>
+                </div>*@
+            <div class="row">
+                <div class="col-xs-8">
+                    <br />
+                    <a>@Html.ActionLink("I forgot my password", "Index", "Admins")</a><br>
+                    @*<a class="text-center">@Html.ActionLink("Register as a new user", "Create", "Admins")</a>*@
+
+                </div>
+                <div class="col-xs-4">
+
+                    <button class="btn btn-default btn-block btn-flat">@Html.ActionLink("Home", "Index", "Home")</button>
+                </div>
+            </div>
+
+            
+           
+           
+        </div>
+    </div>
+    <script src="~/Admin/plugins/jquery/js/jQuery-2.1.4.min.js"></script>
+    <script src="~/Admin/bootstrap/js/bootstrap.js"></script>
+    <script src="~/Admin/plugins/icheck/js/icheck.js"></script>
+    <script src="~/Admin/plugins/jquery-validate/js/jquery.validate.js"></script>
+    <script src="~/Scripts/Account/Login.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@model Job_Broker_WebApp.Models.Admin
+
+    @{
+        Layout = null;
+        ViewBag.Title = "Autherize";
+    }
+
+    <center><h1>ADMIN Login Page</h1></center>
+
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>ADMIN Login PAGE</title>
+        <style>
+            #login-div {
+                position: absolute;
+                left: 40%;
+                top: 40%;
+                border: 1px solid #ccc;
+                padding: 5px 5px;
+            }
+
+            .field-validation-error {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="login-div">
+            @using (Html.BeginForm("Autherize", "Admins", FormMethod.Post))
+            {
+                <table>
+                    <tr>
+                        <td></td>
+                        <td style="text-decoration:underline; text-decoration-color:orangered"><strong>ADMIN of Job broker system</strong></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(model => model.USERNAME)
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.USERNAME)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>@Html.ValidationMessageFor(model => model.USERNAME)</td>
+                    </tr>
+
+                    <tr>
+                        <td>@Html.LabelFor(model => model.PASSWORD)</td>
+                        <td>@Html.EditorFor(model => model.PASSWORD)</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>@Html.ValidationMessageFor(model => model.PASSWORD)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <label class="field-validation-error">@Html.DisplayFor(model => model.LoginErrorMessage)</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" name="name" value="Login" />
+                            <input type="reset" name="name" value="Clear" />
+                        </td>
+                    </tr>
+                </table>
+            }
+
+        </div>
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    </body>
+    </html>*@

@@ -1,0 +1,176 @@
+﻿@model Job_Broker_WebApp.Models.Register
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Register</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REGION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REGION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZONE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZONE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TOWN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TOWN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KEBELE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KEBELE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHONE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHONE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USERNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PASSWORD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PASSWORD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QUEST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUEST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PICTURE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PICTURE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ROLE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ROLE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REGDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REGDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACCEXPDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACCEXPDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

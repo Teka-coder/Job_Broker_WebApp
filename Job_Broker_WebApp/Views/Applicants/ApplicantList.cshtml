@@ -1,0 +1,91 @@
+﻿@*@model Job_Broker_WebApp.Models.Applicant*@
+@model IEnumerable<Job_Broker_WebApp.Models.Applicant>
+@{
+    ViewBag.Title = "ApplicantList";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center><h2>Applicant List</h2></center>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VAC_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QUALIFICATION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EXPERIENCE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KEBELEID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRPTION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REMARK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Register.FNAME)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VAC_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AGE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SEX)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QUALIFICATION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EXPERIENCE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KEBELEID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DESCRPTION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REMARK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Register.FNAME)
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>*@
+        </tr>
+    }
+
+</table>
+
+

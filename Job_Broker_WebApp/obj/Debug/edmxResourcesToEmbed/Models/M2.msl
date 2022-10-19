@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BM2StoreContainer" CdmEntityContainer="BE2">
+    <EntitySetMapping Name="Partnership">
+      <EntityTypeMapping TypeName="BM2.Partnership">
+        <MappingFragment StoreEntitySet="Partnership">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PARTNERNAME" ColumnName="PARTNERNAME" />
+          <ScalarProperty Name="EMAILADD" ColumnName="EMAILADD" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="PROFESSION" ColumnName="PROFESSION" />
+          <ScalarProperty Name="SUPPORT" ColumnName="SUPPORT" />
+          <ScalarProperty Name="BROKER_ACCNO" ColumnName="BROKER_ACCNO" />
+          <ScalarProperty Name="BROKER_MAIL" ColumnName="BROKER_MAIL" />
+          <ScalarProperty Name="REGdate" ColumnName="REGdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

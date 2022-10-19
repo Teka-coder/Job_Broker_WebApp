@@ -1,0 +1,98 @@
+﻿@model Job_Broker_WebApp.Models.Applicant
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Applicant</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VAC_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VAC_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AGE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AGE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QUALIFICATION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUALIFICATION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EXPERIENCE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EXPERIENCE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KEBELEID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KEBELEID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRPTION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRPTION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REMARK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REMARK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Register.FNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Register.FNAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

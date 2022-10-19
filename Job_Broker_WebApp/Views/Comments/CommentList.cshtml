@@ -1,0 +1,49 @@
+﻿@*@model Job_Broker_WebApp.Models.Comment*@
+@model IEnumerable<Job_Broker_WebApp.Models.Comment>
+@{
+    ViewBag.Title = "CommentList";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center><h2>Comment List</h2></center>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.COMMENT1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RECEIVEDDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Register.FNAME)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.COMMENT1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RECEIVEDDATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Register.FNAME)
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>*@
+        </tr>
+    }
+
+</table>
+
+

@@ -1,0 +1,67 @@
+﻿@model Job_Broker_WebApp.Models.Register
+
+@{
+    ViewBag.Title = "PopDown";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
+}
+
+@*<h2>PopDown</h2>*@
+
+
+
+
+<!doctype html>
+<!--
+
+* Website: https://github.com/alexis-luna/bootstrap-simple-admin-template
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PopDown | Password recovery failed!</title>
+    <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/css/error.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="page vertical-align text-center">
+            <div class="page-content vertical-align-middle">
+                <header>
+                    <h6 style="color:red">Message from the System: @ViewBag.Message</h6>
+                    <h2 class="animation-slide-top">Password recovery failed !</h2>
+                    <p>ከደቡብ አሰሪ ና ሰራተኛ አገናኝ ሲይስተም ላይ የይለፍ ቃልዎን ለማስመለስ ያደረጉት ሙከራ አልተሳካም !</p>
+                </header>
+              
+                <p class="error-advise" style="color:red">ያስገቡት መረጃ አለመመሳሰል አጋጥሟል !</p>
+             
+                <div class="row">
+                    <div class="col-sm-4">
+                            <button class="btn btn-default btn-flat mb-5">@Html.ActionLink("I remebered", "Login", "Home")</button>
+                        </div>
+                    <div class="col-sm-4">
+                        <button class="btn btn-default btn-flat mb-5">@Html.ActionLink("Contact admin", "Create", "Comments")</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <button class="btn btn-default btn-flat mb-5">@Html.ActionLink("Back Home", "Index", "Home")</button>
+                    </div>
+
+                </div>
+                <footer class="page-copyright">
+                    <p>© 2021. All RIGHT RESERVED.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+

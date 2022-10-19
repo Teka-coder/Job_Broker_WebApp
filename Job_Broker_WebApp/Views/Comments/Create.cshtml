@@ -1,0 +1,56 @@
+﻿@model Job_Broker_WebApp.Models.Comment
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Comments</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Comment</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.REG_ID, "REG_ID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("REG_ID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.REG_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.COMMENT1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.COMMENT1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.COMMENT1, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+        <div class="form-group has-feedback">
+            @Html.LabelFor(model => model.COMMENT1, htmlAttributes: new { @class = "control-label col-md-12" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.COMMENT1, new { htmlAttributes = new { @class = "form-control", type = "text", placeholder = "Descrption(40 characters)" } })
+                @Html.ValidationMessageFor(model => model.COMMENT1, "", new { @class = "text-danger" })
+                <span class="form-control-feedback"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("See other", "CommentList")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

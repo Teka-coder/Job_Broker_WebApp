@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ba8c898cb6554980a67dd0364af29da9" Name="Diagram1">
+        <EntityTypeShape EntityType="JobBrokerModel.Admin" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobBrokerModel.Applicant" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobBrokerModel.ApplPayment" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobBrokerModel.Category" Width="1.5" PointX="3.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobBrokerModel.Comment" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobBrokerModel.Company" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobBrokerModel.CompaPayment" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobBrokerModel.Job" Width="1.5" PointX="6" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobBrokerModel.News" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobBrokerModel.Register" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobBrokerModel.Report" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobBrokerModel.Vacancy" Width="1.5" PointX="8.25" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="JobBrokerModel.FK_Applicant_Register" ManuallyRouted="false" />
+        <AssociationConnector Association="JobBrokerModel.FK_ApplPayment_Applicant" ManuallyRouted="false" />
+        <AssociationConnector Association="JobBrokerModel.FK_Job_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="JobBrokerModel.FK_Comment_Register" ManuallyRouted="false" />
+        <AssociationConnector Association="JobBrokerModel.FK_Company_Register" ManuallyRouted="false" />
+        <AssociationConnector Association="JobBrokerModel.FK_CompaPayment_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="JobBrokerModel.FK_Vacancy_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="JobBrokerModel.FK_Vacancy_Job" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

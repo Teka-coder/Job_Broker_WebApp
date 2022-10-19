@@ -1,0 +1,152 @@
+﻿@model IEnumerable<Job_Broker_WebApp.Models.Register>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<center><h2>User List</h2></center>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REGION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZONE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOWN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KEBELE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PHONE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SEX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USERNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PASSWORD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QUEST)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ANS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PICTURE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ROLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REGDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACCEXPDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REGION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZONE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TOWN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KEBELE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PHONE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SEX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USERNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PASSWORD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QUEST)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ANS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PICTURE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ROLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REGDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACCEXPDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
+<div class="row">
+    <div class="col-sm-6">
+
+        <button class="btn btn-default btn-block btn-flat">@Html.ActionLink("Add New", "Create")</button>
+    </div>
+    <div class="col-sm-6">
+        <button class="btn btn-default btn-block btn-flat">@Html.ActionLink("Back", "AdminDashBoard", "Admins")</button>
+
+    </div>
+</div>

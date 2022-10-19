@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Job_Broker_WebApp.Models.Report>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<center><h2>Report List</h2></center>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NUM_REG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NUM_COMP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NUM_JOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NUM_APP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NUM_PAID_APP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NUM_PAID_COMP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NUM_VAC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NUM_COMM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NUM_NEWS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REMARK)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NUM_REG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NUM_COMP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NUM_JOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NUM_APP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NUM_PAID_APP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NUM_PAID_COMP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NUM_VAC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NUM_COMM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NUM_NEWS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REMARK)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

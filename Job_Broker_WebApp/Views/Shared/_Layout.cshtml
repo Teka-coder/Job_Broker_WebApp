@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+
+    <!-- FAVICONS ICON -->
+
+
+
+
+    <title>@ViewBag.Title - Debub Job Broker Application</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+
+
+
+    <link href="~/Content/css/plugins.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/templete.css" rel="stylesheet" />
+    <link class="skin" href="~/Content/css/skin/skin-1.css" rel="stylesheet" />
+    <link href="~/Content/plugins/datepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="~/Content/plugins/revolution/revolution/css/layers.css" rel="stylesheet" />
+    <link href="~/Content/plugins/revolution/revolution/css/settings.css" rel="stylesheet" />
+    <link href="~/Content/plugins/revolution/revolution/css/navigation.css" rel="stylesheet" />
+
+
+
+</head>
+<body id="bg">
+
+    <div class="page-wraper">
+        <!-- header -->
+        <header class="site-header mo-left header fullwidth">
+            <!-- main header -->
+            <div class="sticky-header main-bar-wraper navbar-expand-lg">
+                <div class="main-bar clearfix">
+                    <div class="container clearfix">
+                        <!-- website logo -->
+                       
+                        @*<div class="logo-header mostion">
+                           
+
+                           
+                            <a href="@Url.Action("Index","Home")"><img src="~/Content/images/jblogo3.png" class="logo" alt=""></a>
+                        </div>*@
+
+                        <!-- nav toggle button -->
+                        <!-- nav toggle button -->
+
+                        @*<button class="navbar-toggler collapsed navicon justify-content-end" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                         extra nav 
+                        <div class="extra-nav">
+                            <div class="extra-cell">
+                                <a href="@Url.Action("Create","Registers")" class="site-button"><i class="fa fa-user"></i>Register</a>
+                                <a href="@Url.Action("Login","Home")" class="site-button"><i class="fa fa-lock"></i> Log in</a>
+                            </div>
+                        </div>*@
+
+                        <!-- Quik search -->
+                        <div class="dez-quik-search bg-primary">
+                            <form action="#">
+                                <input name="search" value="" type="text" class="form-control" placeholder="Type to search">
+                                <span id="quik-search-remove"><i class="flaticon-close"></i></span>
+                            </form>
+                        </div>
+                        <!-- main nav -->
+                        <div class="header-nav navbar-collapse collapse justify-content-start" id="navbarNavDropdown">
+                            <ul class="nav navbar-nav">
+                                <li><a href="@Url.Action("Index","Home")"><img src="~/Content/images/whitelogo.png" class="logo" alt=""></a></li>
+                                <li class="active">
+                                    <a href="@Url.Action("Index","Home")">Home </a>
+
+                                </li>
+                                <li >
+                                    <a href="@Url.Action("JobStack","Jobs")">Job stack </a>
+
+                                </li>
+                                @*<li>
+                                    <a href="#">Job stack <i class="fa fa-chevron-down"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="#" class="dez-page">Job1</a></li>
+                                        <li><a href="#" class="dez-page">Job2</a></li>
+                                        <li><a href="#" class="dez-page">Job3</a></li>
+                                    </ul>
+                                </li>*@
+                                <li>
+                                    <a href="@Url.Action("CompanyList","Companies")">Company </a>
+
+                                </li>
+                                @*<li>
+                                    <a href="#">Company <i class="fa fa-chevron-down"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="#" class="dez-page">Company1</a></li>
+                                        <li><a href="#" class="dez-page">Company2</a></li>
+                                        <li><a href="#" class="dez-page">Company3</a></li>
+                                    </ul>
+                                </li>*@
+                                <li>
+                                    <a href="@Url.Action("CategoryList","Categories")">Category </a>
+
+                                </li>
+                                @*<li>
+                                    <a href="#">Category <i class="fa fa-chevron-down"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="#" class="dez-page">Category1</a></li>
+                                        <li><a href="#" class="dez-page">Category2</a></li>
+                                    </ul>
+                                </li>*@
+                                <li>
+                                    <a href="@Url.Action("VacancyList","Vacancies")">Vacancy </a>
+
+                                </li>
+                                @*<li>
+                                    <a href="#">Vacancy <i class="fa fa-chevron-down"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="@Url.Action("about", "home")" class="dez-page">Vacancy1</a></li>
+                                        <li><a href="@Url.Action("index","home")" class="dez-page">Vacancy2</a></li>
+                                        <li><a href="@Url.Action("index","home")" class="dez-page">Vacancy3</a></li>
+                                        <li>
+                                            <a href="#" class="dez-page">Vacancy4</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="@Url.Action("index","home")" class="dez-page">By Company1</a></li>
+                                                <li><a href="@Url.Action("index","home")" class="dez-page">By Company2</a></li>
+                                                <li><a href="@Url.Action("index","home")" class="dez-page">By Company3</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="@Url.Action("index","home")" class="dez-page">Vacancy5</a></li>
+                                        <li><a href="@Url.Action("index","home")" class="dez-page">Vacancy6</a></li>
+                                        <li><a href="@Url.Action("index","home")" class="dez-page">Vacancy7</a></li>
+                                    </ul>
+                                </li>*@
+                                <li>
+                                    <a href="@Url.Action("Help","Home")">Help(ዕርዳታ ይፈልጋሉ?) </a>
+
+                                </li>
+                                @*<li>
+                                    <a href="#">Help(ዕርዳታ ይፈልጋሉ?) <i class="fa fa-chevron-down"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="@Url.Action("index","home")" class="dez-page">Classic</a></li>
+                                        <li><a href="@Url.Action("index","home")" class="dez-page">Classic Sidebar</a></li>
+                                        <li><a href="@Url.Action("index","home")" class="dez-page">Detailed Grid</a></li>
+                                        <li><a href="@Url.Action("index","home")" class="dez-page">Detailed Grid Sidebar</a></li>
+                                        <li><a href="@Url.Action("index","home")" class="dez-page">Left Image Sidebar</a></li>
+                                        <li><a href="@Url.Action("index","home")" class="dez-page">Blog Details</a></li>
+                                    </ul>
+                                </li>*@
+                                <li>
+                                    <a href="#">More <i class="fa fa-chevron-down"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="@Url.Action("About","Home")" class="dez-page">About Us</a></li>
+                                        <li><a href="@Url.Action("Contact","Home")" class="dez-page">Contact</a></li>
+                                    </ul>
+                                </li>
+                                <li class="active">
+                                    <a href="@Url.Action("Create","Registers")">Register </a>
+
+                                </li>
+                               
+                                <li>
+                                    <a href="#">Log in <i class="fa fa-lock active"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="@Url.Action("Login","Home")" class="dez-page">Local User</a></li>
+                                        <li><a href="@Url.Action("Autherize","Admins")" class="dez-page">Admin</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- main header END -->
+        </header>
+        <!-- header END -->
+
+
+        @RenderBody()
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-4 col-md-12 col-sm-12">
+                            <div class="widget">
+
+                               
+                                <img src="~/Images/lg11.png" width="180" class="m-b15 img-circle" alt="" />
+                                <p class="text-capitalize m-b20">ይህ ደቡብ ጆብ ብሮከር(Debub job broker) የተሰኘዉ ዌብሳይት በኢትዮጲያ ደቡባዊ ክልል ዉስጥ ለሚኖሩ አምራች(productive) ስራ ፈላጊዎች ና ሠራተኛ ለሚያፈላልጉ ልማታዊ ካምፓኒዎች፤ እንዲሁም ለቤት ዉስጥ ሰራተኛ ለሚፈልጉ ግለሰቦች ታስቦ የተሰራ ሁነኛ አገናኝ ሲይስተም ነዉ፡፡</p>
+                                <div class="subscribe-form m-b20">
+                                    <form class="dzSubscribe" action="" method="post">
+                                        <div class="dzSubscribeMsg"></div>
+                                        <div class="input-group">
+                                            <input name="dzEmail" required="required" class="form-control" placeholder="Your Email Id" type="email">
+                                            <span class="input-group-btn">
+                                                <button name="submit" value="Submit" type="submit" class="site-button radius-xl">Subscribe</button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                                <ul class="list-inline m-a0">
+                                    <li><a href="@Url.Action("Index","Home")" class="site-button white facebook circle "><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="@Url.Action("Index","Home")" class="site-button white google-plus circle "><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="@Url.Action("Index","Home")" class="site-button white linkedin circle "><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="@Url.Action("Index","Home")" class="site-button white instagram circle "><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="@Url.Action("Index","Home")" class="site-button white twitter circle "><i class="fa fa-twitter"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-5 col-md-8 col-sm-8 col-12">
+                            <div class="widget border-0">
+                                <h5 class="m-b30 text-white">Quick links</h5>
+                                <ul class="list-2 list-line">
+                                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                                    <li><a href="@Url.Action("JobStack","Jobs")">Jobs</a></li>
+                                    <li><a href="@Url.Action("CompanyList","Companies")">Companies</a></li>
+                                    <li><a href="@Url.Action("VacancyList","Vacancies")">Vacancies</a></li>
+                                    <li><a href="@Url.Action("CategoryList","Categories")">Categories</a></li>
+                                    <li><a href="@Url.Action("Help","Home")">Help</a></li>
+                                    <li><a href="@Url.Action("About","Home")">About</a></li>
+                                    <li><a href="@Url.Action("Contact","Home")">Contact</a></li>
+                                    <li><a href="@Url.Action("PartnerList","Partnerships")">Our Partners</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-12">
+                            <div class="widget border-0">
+                                <h5 class="m-b30 text-white">Latest post</h5>
+                                <ul class="list-2 w10 list-line">
+                                    <li><a href="@Url.Action("CompanyList","Companies")">Company Post</a></li>
+                                    <li><a href="@Url.Action("JobStack","Jobs")">Job Post</a></li>
+                                    <li><a href="@Url.Action("CategoryList","Categories")">New Category</a></li>
+                                    <li><a href="@Url.Action("VacancyList","Vacancies")">Vacancy Post</a></li>
+                                    <li><a href="@Url.Action("PartnerList","Partnerships")">Partner subscrption</a></li>
+                                    @*<li><a href="@Url.Action("Index","Home")">Post6</a></li>*@
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer bottom part -->
+            <div class="footer-bottom">
+                <div class="container">
+                   
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="widget">
+                                @*<h5 class="widgetheading">Our Contact</h5>*@
+                                <address>
+                                    <strong>Developer's Address</strong><br>
+                                    Hawassa Main Road, Near SSIT tower<br>
+                                    Pin-21542 Hawasa, ETHIOPIA.
+                                </address>
+                                <p>
+                                    <i class="fa fa-mobile"></i> (251) 967-964-930
+                                    <br>
+                                    <i class="fa fa-envelope"></i> tekaberako475@gmail.com
+                                </p>
+
+                            </div>
+                            @*<div class="col-lg-12 text-center"><span><a target="_blank" href="@Url.Action("index","home")">Templates Hub</a></span></div>*@
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="copyright">
+
+                                <p><span>&copy; @DateTime.Now.Year - Debub Job Broker Application All right reserved.</span></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="widget">
+                                <h5 class="widgetheading">Recent News</h5>
+                                <ul class="link-list">
+                                    <li><a href="@Url.Action("NewsList","News")">News 1</a><br /></li>
+                                    <li><a href="@Url.Action("NewsList","News")">News 2</a><br /></li>
+                                    <li><a href="@Url.Action("NewsList","News")">News 3</a><br /></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+                </div>
+        </footer>
+        <!-- Footer END -->
+        <!-- scroll top button -->
+        <button class="scroltop fa fa-arrow-up"></button>
+       
+    </div>
+    <!-- JAVASCRIPT FILES ========================================= -->
+    @*<script src="js/jquery.min.js"></script> JQUERY.MIN JS*@ 
+    <script src="~/Scripts/jquery.min.js"></script>
+    @*<script src="plugins/wow/wow.js"></script> WOW JS*@ 
+    <script src="~/Content/plugins/wow/wow.js"></script>
+    <script src="~/Content/plugins/bootstrap/js/popper.min.js"></script>
+    @*<script src="plugins/bootstrap/js/popper.min.js"></script> BOOTSTRAP.MIN JS*@ 
+    @*<script src="plugins/bootstrap/js/bootstrap.min.js"></script> BOOTSTRAP.MIN JS*@ 
+    <script src="~/Content/plugins/bootstrap/js/bootstrap.min.js"></script>
+    @*<script src="plugins/bootstrap-select/bootstrap-select.min.js"></script> FORM JS*@ 
+    <script src="~/Content/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+    @*<script src="plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script> FORM JS*@ 
+    <script src="~/Content/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+    @*<script src="plugins/magnific-popup/magnific-popup.js"></script> MAGNIFIC POPUP JS*@ 
+    <script src="~/Content/plugins/magnific-popup/magnific-popup.js"></script>
+    @*<script src="plugins/counter/waypoints-min.js"></script> WAYPOINTS JS*@ 
+    <script src="~/Content/plugins/counter/waypoints-min.js"></script>
+    @*<script src="plugins/counter/counterup.min.js"></script> COUNTERUP JS*@ 
+    <script src="~/Content/plugins/counter/counterup.min.js"></script>
+    @*<script src="plugins/imagesloaded/imagesloaded.js"></script> IMAGESLOADED*@ 
+    <script src="~/Content/plugins/imagesloaded/imagesloaded.js"></script>
+    @*<script src="plugins/masonry/masonry-3.1.4.js"></script> MASONRY*@ 
+    <script src="~/Content/plugins/masonry/masonry-3.1.4.js"></script>
+    @*<script src="plugins/masonry/masonry.filter.js"></script> MASONRY*@ 
+    @*<script src="plugins/owl-carousel/owl.carousel.js"></script> OWL SLIDER*@ 
+    <script src="~/Content/plugins/owl-carousel/owl.carousel.js"></script>
+    <script src="~/Content/plugins/masonry/masonry.filter.js"></script>
+    @*<script src="plugins/rangeslider/rangeslider.js"></script> Rangeslider*@ 
+    <script src="~/Content/plugins/rangeslider/rangeslider.js"></script>
+    @*<script src="js/custom.js"></script> CUSTOM FUCTIONS*@  
+    <script src="~/Scripts/custom.js"></script>
+    @*<script src="js/dz.carousel.js"></script> SORTCODE FUCTIONS*@  
+    <script src="~/Scripts/dz.carousel.js"></script>
+    @*<script src='js/recaptcha/api.js'></script>  Google API For Recaptcha*@  
+    <script src="~/Scripts/recaptcha/api.js"></script>
+    @*<script src="js/dz.ajax.js"></script> CONTACT JS*@  
+    <script src="~/Scripts/dz.ajax.js"></script>
+    @*<script src="plugins/paroller/skrollr.min.js"></script> PAROLLER*@ 
+    <script src="~/Content/plugins/paroller/skrollr.min.js"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+
+</body>
+
+
+</html>

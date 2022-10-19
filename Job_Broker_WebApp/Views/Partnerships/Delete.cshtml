@@ -1,0 +1,89 @@
+﻿@model Job_Broker_WebApp.Models.Partnership
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Partnership</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PARTNERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PARTNERNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAILADD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAILADD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHONE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHONE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROFESSION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROFESSION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SUPPORT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SUPPORT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BROKER_ACCNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BROKER_ACCNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BROKER_MAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BROKER_MAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REGdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REGdate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,35 @@
+﻿@model Job_Broker_WebApp.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+    //Layout = null;
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Category</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CATEGORY1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CATEGORY1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

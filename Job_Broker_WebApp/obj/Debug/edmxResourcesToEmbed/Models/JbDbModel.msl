@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JobBrokerModelStoreContainer" CdmEntityContainer="JobBrokerEntities">
+    <EntitySetMapping Name="Admin">
+      <EntityTypeMapping TypeName="JobBrokerModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="QUEST" ColumnName="QUEST" />
+          <ScalarProperty Name="ANS" ColumnName="ANS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applicant">
+      <EntityTypeMapping TypeName="JobBrokerModel.Applicant">
+        <MappingFragment StoreEntitySet="Applicant">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="REG_ID" ColumnName="REG_ID" />
+          <ScalarProperty Name="VAC_ID" ColumnName="VAC_ID" />
+          <ScalarProperty Name="AGE" ColumnName="AGE" />
+          <ScalarProperty Name="SEX" ColumnName="SEX" />
+          <ScalarProperty Name="QUALIFICATION" ColumnName="QUALIFICATION" />
+          <ScalarProperty Name="EXPERIENCE" ColumnName="EXPERIENCE" />
+          <ScalarProperty Name="KEBELEID" ColumnName="KEBELEID" />
+          <ScalarProperty Name="CV" ColumnName="CV" />
+          <ScalarProperty Name="DESCRPTION" ColumnName="DESCRPTION" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplPayment">
+      <EntityTypeMapping TypeName="JobBrokerModel.ApplPayment">
+        <MappingFragment StoreEntitySet="ApplPayment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="APP_ID" ColumnName="APP_ID" />
+          <ScalarProperty Name="TYPEOFPAY" ColumnName="TYPEOFPAY" />
+          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+          <ScalarProperty Name="DOP" ColumnName="DOP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="JobBrokerModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CATEGORY1" ColumnName="CATEGORY" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comment">
+      <EntityTypeMapping TypeName="JobBrokerModel.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="REG_ID" ColumnName="REG_ID" />
+          <ScalarProperty Name="COMMENT1" ColumnName="COMMENT" />
+          <ScalarProperty Name="RECEIVEDDATE" ColumnName="RECEIVEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Company">
+      <EntityTypeMapping TypeName="JobBrokerModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="REG_ID" ColumnName="REG_ID" />
+          <ScalarProperty Name="COMP_NAME" ColumnName="COMP_NAME" />
+          <ScalarProperty Name="OWNERS" ColumnName="OWNERS" />
+          <ScalarProperty Name="REGION" ColumnName="REGION" />
+          <ScalarProperty Name="ZONE" ColumnName="ZONE" />
+          <ScalarProperty Name="TOWN" ColumnName="TOWN" />
+          <ScalarProperty Name="KEBELE" ColumnName="KEBELE" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="DESCRPTION" ColumnName="DESCRPTION" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompaPayment">
+      <EntityTypeMapping TypeName="JobBrokerModel.CompaPayment">
+        <MappingFragment StoreEntitySet="CompaPayment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="TYPEOFPAY" ColumnName="TYPEOFPAY" />
+          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+          <ScalarProperty Name="DOP" ColumnName="DOP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Job">
+      <EntityTypeMapping TypeName="JobBrokerModel.Job">
+        <MappingFragment StoreEntitySet="Job">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CAT_ID" ColumnName="CAT_ID" />
+          <ScalarProperty Name="JOB_NAME" ColumnName="JOB_NAME" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="JobBrokerModel.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NEWS1" ColumnName="NEWS" />
+          <ScalarProperty Name="POSTDATE" ColumnName="POSTDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Register">
+      <EntityTypeMapping TypeName="JobBrokerModel.Register">
+        <MappingFragment StoreEntitySet="Register">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FNAME" ColumnName="FNAME" />
+          <ScalarProperty Name="LNAME" ColumnName="LNAME" />
+          <ScalarProperty Name="REGION" ColumnName="REGION" />
+          <ScalarProperty Name="ZONE" ColumnName="ZONE" />
+          <ScalarProperty Name="TOWN" ColumnName="TOWN" />
+          <ScalarProperty Name="KEBELE" ColumnName="KEBELE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="SEX" ColumnName="SEX" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="QUEST" ColumnName="QUEST" />
+          <ScalarProperty Name="ANS" ColumnName="ANS" />
+          <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+          <ScalarProperty Name="ROLE" ColumnName="ROLE" />
+          <ScalarProperty Name="REGDATE" ColumnName="REGDATE" />
+          <ScalarProperty Name="ACCEXPDATE" ColumnName="ACCEXPDATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Report">
+      <EntityTypeMapping TypeName="JobBrokerModel.Report">
+        <MappingFragment StoreEntitySet="Report">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="NUM_REG" ColumnName="NUM_REG" />
+          <ScalarProperty Name="NUM_COMP" ColumnName="NUM_COMP" />
+          <ScalarProperty Name="NUM_JOB" ColumnName="NUM_JOB" />
+          <ScalarProperty Name="NUM_APP" ColumnName="NUM_APP" />
+          <ScalarProperty Name="NUM_PAID_APP" ColumnName="NUM_PAID_APP" />
+          <ScalarProperty Name="NUM_PAID_COMP" ColumnName="NUM_PAID_COMP" />
+          <ScalarProperty Name="NUM_VAC" ColumnName="NUM_VAC" />
+          <ScalarProperty Name="NUM_COMM" ColumnName="NUM_COMM" />
+          <ScalarProperty Name="NUM_NEWS" ColumnName="NUM_NEWS" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vacancy">
+      <EntityTypeMapping TypeName="JobBrokerModel.Vacancy">
+        <MappingFragment StoreEntitySet="Vacancy">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="JOB_ID" ColumnName="JOB_ID" />
+          <ScalarProperty Name="MIN_QUALF" ColumnName="MIN_QUALF" />
+          <ScalarProperty Name="POSTDATE" ColumnName="POSTDATE" />
+          <ScalarProperty Name="INTERVDATE" ColumnName="INTERVDATE" />
+          <ScalarProperty Name="INTERVTIME" ColumnName="INTERVTIME" />
+          <ScalarProperty Name="DURATION" ColumnName="DURATION" />
+          <ScalarProperty Name="SALARY" ColumnName="SALARY" />
+          <ScalarProperty Name="REQ_NUM" ColumnName="REQ_NUM" />
+          <ScalarProperty Name="REQ_SEX" ColumnName="REQ_SEX" />
+          <ScalarProperty Name="DESCRPTION" ColumnName="DESCRPTION" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Job_Broker_WebApp.Models.Vacancy>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<center><h2>Vacancy List</h2></center>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MIN_QUALF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POSTDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INTERVDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INTERVTIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DURATION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SALARY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REQ_NUM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REQ_SEX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRPTION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Company.COMP_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Job.JOB_NAME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MIN_QUALF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POSTDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INTERVDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INTERVTIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DURATION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SALARY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REQ_NUM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REQ_SEX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCRPTION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Company.COMP_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Job.JOB_NAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

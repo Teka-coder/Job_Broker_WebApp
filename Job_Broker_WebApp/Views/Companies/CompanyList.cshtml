@@ -1,0 +1,119 @@
+﻿@*@model Job_Broker_WebApp.Models.Company*@
+@model IEnumerable<Job_Broker_WebApp.Models.Company>
+@{
+    ViewBag.Title = "CompanyList";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center><h2>Company List</h2></center>
+
+@*<p>
+        @Html.ActionLink("New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COMP_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OWNERS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REGION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZONE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOWN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KEBELE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PHONE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRPTION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REMARK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Register.USERNAME)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.COMP_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OWNERS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REGION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZONE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TOWN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KEBELE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PHONE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMAIL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DESCRPTION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.STATUS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REMARK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Register.USERNAME)
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>*@
+        </tr>
+    }
+
+</table>
+@*<div class="row">
+    <div class="col-sm-6">
+
+        <button class="btn btn-default btn-block btn-flat">@Html.ActionLink("Add New", "Create")</button>
+    </div>
+    <div class="col-sm-6">
+        <button class="btn btn-default btn-block btn-flat">@Html.ActionLink("Back", "AdminDashBoard", "Admins")</button>
+
+    </div>
+</div>*@
+
+

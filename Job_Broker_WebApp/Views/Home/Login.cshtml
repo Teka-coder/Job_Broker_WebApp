@@ -1,0 +1,124 @@
+﻿@model Job_Broker_WebApp.Models.Register
+
+@{
+    Layout = null;
+    ViewBag.Title = "Login";
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link href="~/Admin/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Admin/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Admin/plugins/ionicons/css/ionicons.css" rel="stylesheet" />
+    <link href="~/Admin/dist/css/admin-lte.css" rel="stylesheet" />
+    <link href="~/Admin/plugins/icheck/css/sqare/blue.css" rel="stylesheet" />
+    
+ </head>
+
+<body class="hold-transition login-page">
+    @*<h3>@ViewBag.Message</h3>*@
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="@Url.Action("Login", "Home")"><strong>እንኳን በደህና መጡ!</strong><br /><strong>Welcome to</strong><br /><b>Job Broker System!</b></a>
+        </div>
+
+        @*@if (@ViewBag.Message != null)
+        {
+            <div style="border: 1px solid red">
+                @ViewBag.Message Welcome to <b>Job Broker System!</b>
+            </div>
+        }*@
+        <div class="login-box-body">
+            <p class="login-box-msg">Sign in( ወደ አካዉንትዎ ይግቡ)</p>
+            @using (Html.BeginForm("Login", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(m => m.USERNAME, new { @class = "form-control", type = "text", placeholder = "የደንበኝነት ስም" })
+                    @Html.ValidationMessageFor(m => m.USERNAME, "", new { @class = "text-danger" })
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    @Html.PasswordFor(m => m.PASSWORD, new { @class = "form-control", type = "password", placeholder = "የይለፍ ቃል" })
+                    @Html.ValidationMessageFor(m => m.PASSWORD, "", new { @class = "text-danger" })
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 Radio">
+                        @Html.LabelFor(model => model.ROLE)
+                    </div>
+                    <div class="col-xs-8">
+                        Job seeker: @Html.RadioButtonFor(model => model.ROLE, "Job seeker")
+                        <br />
+                        &nbsp;&nbsp;&nbsp;Employer: @Html.RadioButtonFor(model => model.ROLE, "Employer")
+                        @Html.ValidationMessageFor(model => model.ROLE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="row">
+                    
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Log In</button>
+                        @*<span class="glyphicon glyphicon-log-in form-control-feedback"></span>*@ 
+                    </div>
+                   <div class="col-xs-4">
+
+                   </div>
+                    <div class="col-xs-4">
+                        
+                        <button type="reset" class="btn btn-danger btn-block btn-flat">Clear</button>
+                        
+                    </div>
+                </div>
+            }
+            @*<div class="social-auth-links text-center">
+                <p>- OR -</p>
+                <a href="#" class="btn btn-block btn-social btn-facebook btn-flat">
+                    <i class="fa fa-facebook"></i> Sign in using
+                    Facebook
+                </a>
+                <a href="#" class="btn btn-block btn-social btn-google btn-flat">
+                    <i class="fa fa-google-plus"></i> Sign in using
+                    Google+
+                </a>
+            </div>*@
+            <div class="row">
+                <div class="col-xs-8">
+                    <br />
+                    <a>@Html.ActionLink("I forgot my password", "ResetPassword", "Home")</a><br>
+                    <a class="text-center">@Html.ActionLink("Register as a new user", "Create", "Registers")</a>
+
+                </div>
+                <div class="col-xs-4">
+                   <br />
+                    <button class="btn btn-default btn-block btn-flat">@Html.ActionLink("Home", "Index", "Home")</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Admin/plugins/jquery/js/jQuery-2.1.4.min.js"></script>
+    <script src="~/Admin/bootstrap/js/bootstrap.js"></script>
+    <script src="~/Admin/plugins/icheck/js/icheck.js"></script>
+    <script src="~/Admin/plugins/jquery-validate/js/jquery.validate.js"></script>
+    <script src="~/Scripts/Account/Login.js"></script>
+  
+</body>
+</html>
+
+
+
+
+
+
+
+     

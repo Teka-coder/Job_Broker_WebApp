@@ -1,0 +1,76 @@
+﻿@model Job_Broker_WebApp.Models.Register
+
+@*@model IEnumerable<Job_Broker_WebApp.Models.Register>*@
+
+@{
+    ViewBag.Title = "PopDown";
+    Layout = null;
+    if (Session["ID"] == null)
+    {
+        Response.Redirect("~/Home/ServerError");
+    }
+}
+
+
+
+
+
+
+<!doctype html>
+<!--
+
+* Website: https://github.com/alexis-luna/bootstrap-simple-admin-template
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PopUp | Password recovery succeed!</title>
+    <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/css/error.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="page vertical-align text-center">
+            <div class="page-content vertical-align-middle">
+                <header>
+                    <h6 style="color:red">Message from the System: @ViewBag.Message</h6>
+                    <h2 class="animation-slide-top">Password recovery succeed !</h2>
+                    <p>@Session["USERNAME"].ToString(): የይለፍ ቃልዎ በትክክል ተመልሶሎታል !</p>
+                </header>
+                @*<p class="error-advise">@Session["USERNAME"].ToString() is registered succesfully !.</p>*@
+                <p class="success">የይለፍ ቃልዎ ይሄ ነው: @Session["PASSWORD"].ToString()</p>
+                <a class="btn btn-success btn-flat mb-5 col-sm-6">WELCOME ! @Session["FNAME"].ToString()&nbsp;@Session["LNAME"].ToString()</a><br />
+                <p class="success">Your Password is: @Session["PASSWORD"].ToString()</p>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <button class="btn btn-default btn-flat mb-5">@Html.ActionLink("Log in", "Login", "Home")</button>
+                    </div>
+                    <div class="col-xs-4">
+                      
+                    </div>
+                    <div class="col-xs-4">
+                        <button class="btn btn-default btn-flat mb-5">@Html.ActionLink("Home", "Index", "Home")</button>
+                    </div>
+
+                </div>
+                <footer class="page-copyright">
+                    <p>© 2021. All RIGHT RESERVED.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+
+
+
+

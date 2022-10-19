@@ -1,0 +1,120 @@
+﻿@model Job_Broker_WebApp.Models.Vacancy
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Vacancy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MIN_QUALF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MIN_QUALF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.POSTDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.POSTDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INTERVDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INTERVDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INTERVTIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INTERVTIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DURATION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DURATION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SALARY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SALARY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REQ_NUM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REQ_NUM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REQ_SEX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REQ_SEX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRPTION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRPTION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Company.COMP_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company.COMP_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.JOB_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.JOB_NAME)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Job_Broker_WebApp.Models.Partnership>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center><h2>Partners List</h2></center>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PARTNERNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAILADD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PHONE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PROFESSION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SUPPORT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BROKER_ACCNO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BROKER_MAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REGdate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PARTNERNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAILADD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PHONE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PROFESSION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SUPPORT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BROKER_ACCNO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BROKER_MAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REGdate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
+<div class="row">
+    <div class="col-sm-6">
+
+        <button class="btn btn-default btn-block btn-flat">@Html.ActionLink("Add New", "Create")</button>
+    </div>
+    <div class="col-sm-6">
+        <button class="btn btn-default btn-block btn-flat">@Html.ActionLink("Back", "Index", "Home")</button>
+
+    </div>
+</div>

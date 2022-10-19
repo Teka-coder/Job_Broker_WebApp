@@ -1,0 +1,524 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@*@Code
+    ViewData("Title") = "Home Page"
+End Code*@
+
+<!-- Content -->
+<div class="page-content">
+    <!-- Section Banner -->
+   
+    
+    <div class="dez-bnr-inr dez-bnr-inr-md " style="background-color:green">
+        <div class="container">
+            <div class="dez-bnr-inr-entry align-m text-white">
+                <div class="job-search-form">
+                    <h2 class="text-center">DEBUBE JOB BROKER</h2>
+                    <h3>ደቡብ አሰሪ ና ሠራተኛ አገናኝ</h3>
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Jobs(የተመዘገበ ስራ ይፈልጉ)">
+                            <input type="text" class="form-control" placeholder="Zone/City(የተመዘገቡ ዞኖቸ/ከተማዎች)">
+                            <div class="input-group-prepend">
+                                <button class="BigBold-Button">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Section Banner END -->
+    <!-- About Us -->
+    @*<img src="~/Content/images/pic1.jpg" bg-white/>*@
+   
+    <div class="section-full job-categories content-inner-2 " style="background-color:aquamarine">
+        <div class="container">
+            <div class="section-head text-center">
+                <h2 class="m-b5">Website Specials(ልዩነታችን)</h2>
+                <h5 class="fw4">All in ones(ሁሉን በአንድ ማድረጋችን)</h5>
+            </div>
+            <div class="row sp20">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="icon-bx-wraper">
+                        <div class="icon-content">
+                            <div class="icon-md text-success m-b20">@*<i class="ti-location-pin"></i>*@</div>
+                            <a href="@Url.Action("Create","Registers")" class="dez-tilte">RELIABLITY</a>
+                            <p class="m-a0">DEBUB JOB BROKER is a reliable way maker website for an enterpreuneral companies and productive job seeker</p>
+                            <div class="rotate-icon"><i class="ti-location-pin"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="icon-bx-wraper">
+                        <div class="icon-content">
+                            <div class="icon-md text-success m-b20">@*<i class="ti-wand"></i>*@</div>
+                            <a href="@Url.Action("Index2","Jobs")" class="dez-tilte">JOB AVAILABLITY</a>
+                            <p class="m-a0">Our website is a open home for job seekers to inform them wich job is available through this window for them who are looking for new job as well as hoping to change their current careers.</p>
+                            <div class="rotate-icon"><i class="ti-wand"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="icon-bx-wraper">
+                        <div class="icon-content">
+                            <div class="icon-md text-success m-b20">@*<i class="ti-wallet"></i>*@</div>
+                            <a href="@Url.Action("Create","Registers")" class="dez-tilte">COMPANY REGISTRATION</a>
+                            <p class="m-a0">If You are an enterprneur or an individual with company like HOTEL, FABRIC, PRIVATE BANK and for HOME services, can easily registered and post vacancy</p>
+                            <div class="rotate-icon"><i class="ti-wallet"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="icon-bx-wraper">
+                        <div class="icon-content">
+                            <div class="icon-md text-success m-b20">@*<i class="ti-cloud-up">*@</i></div>
+                            <a href="@Url.Action("Login","Home")" class="dez-tilte">VACANCY POST</a>
+                            <p class="m-a0">You can easily find a vacancy posting company that offers right job with agreed salary according to your applications.</p>
+                            <div class="rotate-icon"><i class="ti-cloud-up"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                @*<div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="icon-bx-wraper">
+                        <div class="icon-content">
+                            <div class="icon-md text-success m-b20"><i class="ti-bar-chart"></i></div>
+                            <a href="#" class="dez-tilte">Telecommunications</a>
+                            <p class="m-a0">198 Open Positions</p>
+                            <div class="rotate-icon"><i class="ti-bar-chart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="icon-bx-wraper">
+                        <div class="icon-content">
+                            <div class="icon-md text-success m-b20"><i class="ti-tablet"></i></div>
+                            <a href="#" class="dez-tilte">Restaurant / Food Service</a>
+                            <p class="m-a0">198 Open Positions</p>
+                            <div class="rotate-icon"><i class="ti-tablet"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="icon-bx-wraper">
+                        <div class="icon-content">
+                            <div class="icon-md text-success m-b20"><i class="ti-camera"></i></div>
+                            <a href="#" class="dez-tilte">Construction / Facilities</a>
+                            <p class="m-a0">198 Open Positions</p>
+                            <div class="rotate-icon"><i class="ti-camera"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="icon-bx-wraper">
+                        <div class="icon-content">
+                            <div class="icon-md text-success m-b20"><i class="ti-panel"></i></div>
+                            <a href="#" class="dez-tilte">Health</a>
+                            <p class="m-a0">198 Open Positions</p>
+                            <div class="rotate-icon"><i class="ti-panel"></i></div>
+                        </div>
+                    </div>
+                </div>*@
+
+
+                <div class="col-lg-12 text-center m-t30">
+                    <button class="site-button radius-xl" href="@Url.Action("Index","Categories")">Categories</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Us END -->
+    <!-- Call To Action -->
+  
+    <div class="section-full content-inner-2 call-to-action  text-white text-center bg-img-fix" style="background-color:green">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="m-b10">Add value to Techno progression with Your Online Partneship!</h2>
+                    <p class="m-b0">DEBUB JOB BROKER is a website built for productive job seekers and an enterpreuneral companies for who dwell in Southern region of Ethiopia, recruiting employees through well structured intermediate agent.</p>
+                    <a href="@Url.Action("Create","Partnerships")" class="site-button m-t20 outline outline-2 radius-xl">Become partner(አጋር ሊሆኑን ይፈልጋሉ)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Call To Action END -->
+    <!-- Our Job -->
+    <div class="section-full bg-white content-inner-2">
+        <div class="container">
+            <div class="d-flex job-title-bx section-head">
+                <div class="mr-auto">
+                    <h2 class="m-b5">Recent Vacancies</h2>
+                    <h5 class="fw4 m-b0">10+ Recently Added Jobs</h5>
+                </div>
+                <div class="align-self-end">
+                    <a href="@Url.Action("Index2","Vacancies")" class="site-button button-sm">Browse All Vacancies <i class="fa fa-long-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9">
+                    <ul class="post-job-bx">
+                        <li>
+                            <a href="@Url.Action("Login","Home")">
+                                <div class="d-flex m-b30">
+                                    <div class="job-post-company">
+                                      
+                                        <span><img src="~/Content/images/icon1.png" /></span>
+                                    </div>
+                                    <div class="job-post-info">
+                                        <h4>Scheif(ለማዕድ ቤት)</h4>
+                                        <ul>
+                                            <li><i class="fa fa-map-marker"></i> Dilla, Ethiopia</li>
+                                            <li><i class="fa fa-bookmark-o"></i> Full Time</li>
+                                            <li><i class="fa fa-clock-o"></i> Published 2 days ago</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="job-time mr-auto">
+                                        <span>Full Time</span>
+                                    </div>
+                                    
+                                    <div class="salary-bx">
+                                        <span>ETB1200 - ETB 2500</span>
+                                    </div>
+                                </div>
+                                <span class="post-like fa fa-heart-o"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Login","Home")">
+                                <div class="d-flex m-b30">
+                                    <div class="job-post-company">
+                                        <span><img src="~/Content/images/icon1.png" /></span>
+                                    </div>
+                                    <div class="job-post-info">
+                                        <h4>sanitary(ለፅዳት ሰራተኝነት)</h4>
+                                        <ul>
+                                            <li><i class="fa fa-map-marker"></i> Wolaitasodo, Ethiopia</li>
+                                            <li><i class="fa fa-bookmark-o"></i> Full Time</li>
+                                            <li><i class="fa fa-clock-o"></i> Published 3 days ago</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="job-time mr-auto">
+                                        <span>Full Time</span>
+                                    </div>
+                                    
+                                    <div class="salary-bx">
+                                        <span>ETB1200 - ETB 2000</span>
+                                    </div>
+                                </div>
+                                <span class="post-like fa fa-heart-o"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Login","Home")">
+                                <div class="d-flex m-b30">
+                                    <div class="job-post-company">
+                                        <span><img src="~/Content/images/icon1.png" /></span>
+                                    </div>
+                                    <div class="job-post-info">
+                                        <h4>Messanger(ተላላኪ)</h4>
+                                        <ul>
+                                            <li><i class="fa fa-map-marker"></i> Wachamo, Ethiopia</li>
+                                            <li><i class="fa fa-bookmark-o"></i> Full Time</li>
+                                            <li><i class="fa fa-clock-o"></i> Published 11 months ago</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="job-time mr-auto">
+                                        <span>Full Time</span>
+                                    </div>
+                                    
+                                    <div class="salary-bx">
+                                        <span>ETB2000 - ETB 3000</span>
+                                    </div>
+                                </div>
+                                <span class="post-like fa fa-heart-o"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Login","Home")">
+                                <div class="d-flex m-b30">
+                                    <div class="job-post-company">
+                                        <span><img src="~/Content/images/icon1.png" /></span>
+                                    </div>
+                                    <div class="job-post-info">
+                                        <h4>Garden beuty(የግቢ ዉበት/አትክልተኛ)</h4>
+                                        <ul>
+                                            <li><i class="fa fa-map-marker"></i> Hawwasa, Ethiopia</li>
+                                            <li><i class="fa fa-bookmark-o"></i> Full Time</li>
+                                            <li><i class="fa fa-clock-o"></i> Published 1 week ago</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="job-time mr-auto">
+                                        <span>Full Time</span>
+                                    </div>
+                                    
+                                    <div class="salary-bx">
+                                        <span>ETB2000 - ETB 2500</span>
+                                    </div>
+                                </div>
+                                <span class="post-like fa fa-heart-o"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Login","Home")">
+                                <div class="d-flex m-b30">
+                                    <div class="job-post-company">
+                                        <span><img src="~/Content/images/icon1.png" /></span>
+                                    </div>
+                                    <div class="job-post-info">
+                                        <h4>Car driver(ለመኪና ሾፌር)</h4>
+                                        <ul>
+                                            <li><i class="fa fa-map-marker"></i> Wolkitei, Ethiopia</li>
+                                            <li><i class="fa fa-bookmark-o"></i> Full Time</li>
+                                            <li><i class="fa fa-clock-o"></i> Published 4 days ago</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="job-time mr-auto">
+                                        <span>Full Time</span>
+                                    </div>
+                                    
+                                    <div class="salary-bx">
+                                        <span>ETB3000 - ETB 3500</span>
+                                    </div>
+                                </div>
+                                <span class="post-like fa fa-heart-o"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Login","Home")">
+                                <div class="d-flex m-b30">
+                                    <div class="job-post-company">
+                                        <span><img src="~/Content/images/icon1.png" /></span>
+                                    </div>
+                                    <div class="job-post-info">
+                                        <h4>Child care(ሞግዚትነት)</h4>
+                                        <ul>
+                                            <li><i class="fa fa-map-marker"></i>Yirgachefei, Ethiopia</li>
+                                            <li><i class="fa fa-bookmark-o"></i> Full Time</li>
+                                            <li><i class="fa fa-clock-o"></i> Published 5 days ago</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="job-time mr-auto">
+                                        <span>Full Time</span>
+                                    </div>
+                                    
+                                    <div class="salary-bx">
+                                        <span>ETB2000 - ETB 2500</span>
+                                    </div>
+                                </div>
+                                <span class="post-like fa fa-heart-o"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="m-t30">
+                        <div class="d-flex">
+                            <a class="site-button button-sm mr-auto" href="#"><i class="ti-arrow-left"></i> Prev</a>
+                            <a class="site-button button-sm" href="#">Next <i class="ti-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="sticky-top">
+                        <div class="candidates-are-sys m-b30">
+                            <div class="candidates-bx">
+                              
+                                <div class="testimonial-pic radius"><img src="~/Content/images/pic3.jpg" alt="" width="100" height="100"></div>
+                                <div class="testimonial-text">
+                                    <p>I just got a job that I applied for via careerfy! I used the site all the time during my job hunt.</p>
+                                </div>
+                                <div class="testimonial-detail"> <strong class="testimonial-name">Sara</strong> <span class="testimonial-position">Hawwasa, Ethiopia</span> </div>
+                            </div>
+                        </div>
+                        <div class="quote-bx">
+                            <div class="quote-info">
+                                <h4>Creativity(ሥራ ፈጠራ)</h4>
+                                <p>We create the opportunities(አስቻይ ሁኔታ መፍጠር ችለናል)</p>
+                                <a href="@Url.Action("Create","Registers")" class="site-button">Create an Account</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Job END -->
+    <!-- Call To Action -->
+   
+    <div class="section-full p-tb70  text-white text-center bg-img-fix" style="background-color:green">
+        <div class="container">
+            <div class="section-head text-center text-white">
+                <h2 class="m-b5">Testimonials</h2>
+                <h5 class="fw4">Few words from candidates</h5>
+            </div>
+            <div class="blog-carousel-center owl-carousel owl-none">
+                <div class="item">
+                    <div class="testimonial-5">
+                        <div class="testimonial-text">
+                            <p>I enjoyed job broker website...</p>
+                        </div>
+                        <div class="testimonial-detail clearfix">
+                            <div class="testimonial-pic radius shadow">
+                               
+                                <img src="~/Content/images/tpic1.jpg" width="100" height="100" alt="">
+                            </div>
+                            <strong class="testimonial-name" style="color:yellow">Marta</strong>
+                            <span class="testimonial-position">Job seeker</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-5">
+                        <div class="testimonial-text">
+                            <p>I got good candidate through job broker...</p>
+                        </div>
+                        <div class="testimonial-detail clearfix">
+                            <div class="testimonial-pic radius shadow">
+                                
+                                <img src="~/dist/img/user8-128x128.jpg" width="100" height="100" alt="">
+                            </div>
+                            <strong class="testimonial-name" style="color:yellow">Alemayehu</strong>
+                            <span class="testimonial-position">Employer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-5">
+                        <div class="testimonial-text">
+                            <p>Debub Job broker is my job let...</p>
+                        </div>
+                        <div class="testimonial-detail clearfix">
+                            <div class="testimonial-pic radius shadow">
+                              
+                                <img src="~/Content/images/tpic3.jpg" width="100" height="100" alt="">
+                            </div>
+                            <strong class="testimonial-name" style="color:yellow">Beti</strong>
+                            <span class="testimonial-position">Job seeker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Call To Action END -->
+    <!-- Our Latest Blog -->
+    <div class="section-full content-inner-2 overlay-white-middle">
+        <div class="container">
+            <div class="section-head text-black text-center">
+                <h2 class="text-uppercase m-b0">Companies And Jobs Currently We Work For</h2>
+                <p>ለጊዜዉ አየሰራንላቸው ያሉ ካምፓኒዎች ና በዉስጣቸው የሚገኙ ስራዎች</p>
+            </div>
+            <div class="blog-carousel owl-carousel owl-btn-center-lr owl-btn-3 owl-theme owl-btn-center-lr owl-btn-1">
+                <div class="item">
+                    <div class="blog-post blog-grid blog-style-1">
+                       
+                        <div class="dez-post-media dez-img-effect radius-sm"> <a href="@Url.Action("Index2","Companies")"><img src="~/Content/images/bpic4.jpg" alt=""></a> </div>
+                        <div class="dez-info">
+                            <div class="dez-post-meta">
+                                <ul class="d-flex align-items-center">
+                                    <li class="post-date"><i class="fa fa-calendar"></i>September 18, 2017</li>
+                                    <li class="post-comment"><i class="fa fa-comments-o"></i><a href="#">5k</a> </li>
+                                </ul>
+                            </div>
+                            <div class="dez-post-title ">
+                                <h5 class="post-title font-20"><a href="#">HOTEL(ለሆቴል)</a></h5>
+                            </div>
+                            <div class="dez-post-text">
+                                <p>for hotel security(ለደህንነት ወይም ጥበቃ), scheif(ለማዕድ ቤት), sanitary(ለፅዳት ሰራተኝነት), weiter(weitress(አስተናጋጅነት)).</p>
+                            </div>
+                            <div class="dez-post-readmore blog-share">
+                                <a href="@Url.Action("Index2","Jobs")" title="READ MORE" rel="bookmark" class="site-button outline">Proceed(ልቀጥል)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="blog-post blog-grid blog-style-1">
+                       
+                        <div class="dez-post-media dez-img-effect radius-sm"> <a href="@Url.Action("Index2","Companies")"><img src="~/Content/images/bpic3.jpg" alt=""></a> </div>
+                        <div class="dez-info">
+                            <div class="dez-post-meta">
+                                <ul class="d-flex align-items-center">
+                                    <li class="post-date"><i class="fa fa-calendar"></i>September 18, 2017</li>
+                                    <li class="post-comment"><i class="fa fa-comments-o"></i><a href="#">5k</a> </li>
+                                </ul>
+                            </div>
+                            <div class="dez-post-title ">
+                                <h5 class="post-title font-20"><a href="#">FABRIC(ፋብሪካ)</a></h5>
+                            </div>
+                            <div class="dez-post-text">
+                                <p>for one who looking to serve as security(ጥበቃ), kitchen service(ማዕድ ቤት), sanitary(ፅዳት), garden beuty(የግቢ ዉበት/አትክልተኛ), car driver(ለመኪና ሾፌር), machine cleaning(የማሽን ፅዳት), goods preparation(ጥሬ ዕቃ ዝግጅት)</p>
+                            </div>
+                            <div class="dez-post-readmore blog-share">
+                                <a href="@Url.Action("Index2","Jobs")" title="READ MORE" rel="bookmark" class="site-button outline">Proceed(ልቀጥል)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="blog-post blog-grid blog-style-1">
+                       
+                        <div class="dez-post-media dez-img-effect radius-sm"> <a href="@Url.Action("Index2","Companies")"><img src="~/Content/images/bpic2.jpg" alt=""></a> </div>
+                        <div class="dez-info">
+                            <div class="dez-post-meta">
+                                <ul class="d-flex align-items-center">
+                                    <li class="post-date"><i class="fa fa-calendar"></i>September 18, 2017</li>
+                                    <li class="post-comment"><i class="fa fa-comments-o"></i><a href="#">5k</a> </li>
+                                </ul>
+                            </div>
+                            <div class="dez-post-title ">
+                                <h5 class="post-title font-20"><a href="#">Pirivate Banks(ለግል ባንኮች)</a></h5>
+                            </div>
+                            <div class="dez-post-text">
+                                <p>for any one looking to serve as office security(የቢሮ ደህንነት), sanitary(ፅዳት), messanger(ተላላኪ), car driver(ለመኪና ሾፌር), garden beuty(የግቢ ዉበት).</p>
+                            </div>
+                            <div class="dez-post-readmore blog-share">
+                                <a href="@Url.Action("Index2","Jobs")" title="READ MORE" rel="bookmark" class="site-button outline">Proceed(ልቀጥል)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="blog-post blog-grid blog-style-1">
+                       
+                        <div class="dez-post-media dez-img-effect radius-sm"> <a href="@Url.Action("Index2","Companies")"><img src="~/Content/images/bpic1.jpg" alt=""></a> </div>
+                        <div class="dez-info">
+                            <div class="dez-post-meta">
+                                <ul class="d-flex align-items-center">
+                                    <li class="post-date"><i class="fa fa-calendar"></i>September 18, 2017</li>
+                                    <li class="post-comment"><i class="fa fa-comments-o"></i><a href="#">5k</a> </li>
+                                </ul>
+                            </div>
+                            <div class="dez-post-title ">
+                                <h5 class="post-title font-20"><a href="#">HOME SERVICE(ለግለሰብ ቤት)</a></h5>
+                            </div>
+                            <div class="dez-post-text">
+                                <p>for any one looking to serve as home madam(ለቤት ዉስጥ ስራ), house security(ጥበቃ), shop keeper(ሱቅ ነጋዴ), child care(ሞግዚትነት) with in individuals home.</p>
+                            </div>
+                            <div class="dez-post-readmore blog-share">
+                                <a href="@Url.Action("Index2","Jobs")" title="READ MORE" rel="bookmark" class="site-button outline">Proceed(ልቀጥል)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Latest Blog -->
+</div>

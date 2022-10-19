@@ -1,0 +1,50 @@
+﻿@model Job_Broker_WebApp.Models.ApplPayment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ApplPayment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TYPEOFPAY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TYPEOFPAY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AMOUNT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AMOUNT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant.SEX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Applicant.SEX)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

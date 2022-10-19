@@ -1,0 +1,83 @@
+﻿@model Job_Broker_WebApp.Models.Partnership
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Partnership</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PARTNERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PARTNERNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAILADD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAILADD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHONE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHONE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROFESSION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROFESSION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SUPPORT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SUPPORT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BROKER_ACCNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BROKER_ACCNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BROKER_MAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BROKER_MAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REGdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REGdate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

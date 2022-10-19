@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JobBrokerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="QUEST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ANS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Applicant">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="REG_ID" Type="Int32" Nullable="false" />
+    <Property Name="VAC_ID" Type="Int32" Nullable="false" />
+    <Property Name="AGE" Type="Int32" Nullable="false" />
+    <Property Name="SEX" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="QUALIFICATION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EXPERIENCE" Type="Int32" Nullable="false" />
+    <Property Name="KEBELEID" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="CV" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="DESCRPTION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="REMARK" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Register" Relationship="Self.FK_Applicant_Register" FromRole="Applicant" ToRole="Register" />
+    <NavigationProperty Name="ApplPayment" Relationship="Self.FK_ApplPayment_Applicant" FromRole="Applicant" ToRole="ApplPayment" />
+  </EntityType>
+  <EntityType Name="ApplPayment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="APP_ID" Type="Int32" Nullable="false" />
+    <Property Name="TYPEOFPAY" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="AMOUNT" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DOP" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Applicant" Relationship="Self.FK_ApplPayment_Applicant" FromRole="ApplPayment" ToRole="Applicant" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CATEGORY1" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="STATUS" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Job" Relationship="Self.FK_Job_Category" FromRole="Category" ToRole="Job" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="REG_ID" Type="Int32" Nullable="false" />
+    <Property Name="COMMENT1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RECEIVEDDATE" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Register" Relationship="Self.FK_Comment_Register" FromRole="Comment" ToRole="Register" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="REG_ID" Type="Int32" Nullable="false" />
+    <Property Name="COMP_NAME" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OWNERS" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="REGION" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ZONE" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TOWN" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="KEBELE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PHONE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRPTION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="Boolean" Nullable="false" />
+    <Property Name="REMARK" Type="Boolean" />
+    <NavigationProperty Name="Register" Relationship="Self.FK_Company_Register" FromRole="Company" ToRole="Register" />
+    <NavigationProperty Name="CompaPayment" Relationship="Self.FK_CompaPayment_Company" FromRole="Company" ToRole="CompaPayment" />
+    <NavigationProperty Name="Vacancy" Relationship="Self.FK_Vacancy_Company" FromRole="Company" ToRole="Vacancy" />
+  </EntityType>
+  <EntityType Name="CompaPayment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="TYPEOFPAY" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="AMOUNT" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DOP" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Company" Relationship="Self.FK_CompaPayment_Company" FromRole="CompaPayment" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CAT_ID" Type="Int32" Nullable="false" />
+    <Property Name="JOB_NAME" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="STATUS" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Job_Category" FromRole="Job" ToRole="Category" />
+    <NavigationProperty Name="Vacancy" Relationship="Self.FK_Vacancy_Job" FromRole="Job" ToRole="Vacancy" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NEWS1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="POSTDATE" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Register">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FNAME" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="LNAME" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="REGION" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ZONE" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TOWN" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="KEBELE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SEX" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="USERNAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="QUEST" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ANS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PICTURE" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ROLE" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="REGDATE" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ACCEXPDATE" Type="DateTime" Precision="0" />
+    <Property Name="STATUS" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Applicant" Relationship="Self.FK_Applicant_Register" FromRole="Register" ToRole="Applicant" />
+    <NavigationProperty Name="Comment" Relationship="Self.FK_Comment_Register" FromRole="Register" ToRole="Comment" />
+    <NavigationProperty Name="Company" Relationship="Self.FK_Company_Register" FromRole="Register" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DATE" Type="Int32" />
+    <Property Name="NUM_REG" Type="Int32" />
+    <Property Name="NUM_COMP" Type="Int32" />
+    <Property Name="NUM_JOB" Type="Int32" />
+    <Property Name="NUM_APP" Type="Int32" />
+    <Property Name="NUM_PAID_APP" Type="Int32" />
+    <Property Name="NUM_PAID_COMP" Type="Int32" />
+    <Property Name="NUM_VAC" Type="Int32" />
+    <Property Name="NUM_COMM" Type="Int32" />
+    <Property Name="NUM_NEWS" Type="Int32" />
+    <Property Name="REMARK" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vacancy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="JOB_ID" Type="Int32" Nullable="false" />
+    <Property Name="MIN_QUALF" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="POSTDATE" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="INTERVDATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="INTERVTIME" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="DURATION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SALARY" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="REQ_NUM" Type="Int32" Nullable="false" />
+    <Property Name="REQ_SEX" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DESCRPTION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Company" Relationship="Self.FK_Vacancy_Company" FromRole="Vacancy" ToRole="Company" />
+    <NavigationProperty Name="Job" Relationship="Self.FK_Vacancy_Job" FromRole="Vacancy" ToRole="Job" />
+  </EntityType>
+  <Association Name="FK_Applicant_Register">
+    <End Role="Register" Type="Self.Register" Multiplicity="1" />
+    <End Role="Applicant" Type="Self.Applicant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Register">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Applicant">
+        <PropertyRef Name="REG_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplPayment_Applicant">
+    <End Role="Applicant" Type="Self.Applicant" Multiplicity="1" />
+    <End Role="ApplPayment" Type="Self.ApplPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ApplPayment">
+        <PropertyRef Name="APP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Job_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Job" Type="Self.Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="CAT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_Register">
+    <End Role="Register" Type="Self.Register" Multiplicity="1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Register">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="REG_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Register">
+    <End Role="Register" Type="Self.Register" Multiplicity="1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Register">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="REG_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompaPayment_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="CompaPayment" Type="Self.CompaPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CompaPayment">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacancy_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="Vacancy" Type="Self.Vacancy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Vacancy">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacancy_Job">
+    <End Role="Job" Type="Self.Job" Multiplicity="1" />
+    <End Role="Vacancy" Type="Self.Vacancy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Vacancy">
+        <PropertyRef Name="JOB_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="JobBrokerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admin" EntityType="Self.Admin" />
+    <EntitySet Name="Applicant" EntityType="Self.Applicant" />
+    <EntitySet Name="ApplPayment" EntityType="Self.ApplPayment" />
+    <EntitySet Name="Category" EntityType="Self.Category" />
+    <EntitySet Name="Comment" EntityType="Self.Comment" />
+    <EntitySet Name="Company" EntityType="Self.Company" />
+    <EntitySet Name="CompaPayment" EntityType="Self.CompaPayment" />
+    <EntitySet Name="Job" EntityType="Self.Job" />
+    <EntitySet Name="News" EntityType="Self.News" />
+    <EntitySet Name="Register" EntityType="Self.Register" />
+    <EntitySet Name="Report" EntityType="Self.Report" />
+    <EntitySet Name="Vacancy" EntityType="Self.Vacancy" />
+    <AssociationSet Name="FK_Applicant_Register" Association="Self.FK_Applicant_Register">
+      <End Role="Register" EntitySet="Register" />
+      <End Role="Applicant" EntitySet="Applicant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplPayment_Applicant" Association="Self.FK_ApplPayment_Applicant">
+      <End Role="Applicant" EntitySet="Applicant" />
+      <End Role="ApplPayment" EntitySet="ApplPayment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Job_Category" Association="Self.FK_Job_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Job" EntitySet="Job" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_Register" Association="Self.FK_Comment_Register">
+      <End Role="Register" EntitySet="Register" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Register" Association="Self.FK_Company_Register">
+      <End Role="Register" EntitySet="Register" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompaPayment_Company" Association="Self.FK_CompaPayment_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="CompaPayment" EntitySet="CompaPayment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacancy_Company" Association="Self.FK_Vacancy_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Vacancy" EntitySet="Vacancy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacancy_Job" Association="Self.FK_Vacancy_Job">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="Vacancy" EntitySet="Vacancy" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

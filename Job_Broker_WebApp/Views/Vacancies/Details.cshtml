@@ -1,0 +1,114 @@
+﻿@model Job_Broker_WebApp.Models.Vacancy
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vacancy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MIN_QUALF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MIN_QUALF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.POSTDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.POSTDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INTERVDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INTERVDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INTERVTIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INTERVTIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DURATION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DURATION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SALARY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SALARY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REQ_NUM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REQ_NUM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REQ_SEX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REQ_SEX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRPTION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRPTION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Company.COMP_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company.COMP_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.JOB_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.JOB_NAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

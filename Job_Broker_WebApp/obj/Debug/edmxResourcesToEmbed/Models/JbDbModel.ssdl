@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JobBrokerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="QUEST" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ANS" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Applicant">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="REG_ID" Type="int" Nullable="false" />
+    <Property Name="VAC_ID" Type="int" Nullable="false" />
+    <Property Name="AGE" Type="int" Nullable="false" />
+    <Property Name="SEX" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="QUALIFICATION" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="EXPERIENCE" Type="int" Nullable="false" />
+    <Property Name="KEBELEID" Type="image" Nullable="false" />
+    <Property Name="CV" Type="image" Nullable="false" />
+    <Property Name="DESCRPTION" Type="varchar" MaxLength="40" />
+    <Property Name="REMARK" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ApplPayment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="APP_ID" Type="int" Nullable="false" />
+    <Property Name="TYPEOFPAY" Type="char" MaxLength="20" />
+    <Property Name="AMOUNT" Type="money" Nullable="false" />
+    <Property Name="DOP" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CATEGORY" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="STATUS" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="REG_ID" Type="int" Nullable="false" />
+    <Property Name="COMMENT" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RECEIVEDDATE" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="REG_ID" Type="int" Nullable="false" />
+    <Property Name="COMP_NAME" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="OWNERS" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="REGION" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="ZONE" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="TOWN" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="KEBELE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PHONE" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="20" />
+    <Property Name="DESCRPTION" Type="varchar" MaxLength="40" />
+    <Property Name="STATUS" Type="bit" Nullable="false" />
+    <Property Name="REMARK" Type="bit" />
+  </EntityType>
+  <EntityType Name="CompaPayment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COMP_ID" Type="int" Nullable="false" />
+    <Property Name="TYPEOFPAY" Type="char" MaxLength="20" />
+    <Property Name="AMOUNT" Type="money" Nullable="false" />
+    <Property Name="DOP" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CAT_ID" Type="int" Nullable="false" />
+    <Property Name="JOB_NAME" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="STATUS" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NEWS" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="POSTDATE" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Register">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FNAME" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="LNAME" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="REGION" Type="char" MaxLength="20" />
+    <Property Name="ZONE" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="TOWN" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="KEBELE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="20" />
+    <Property Name="PHONE" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="SEX" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="DOB" Type="date" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="QUEST" Type="varchar" MaxLength="40" />
+    <Property Name="ANS" Type="varchar" MaxLength="20" />
+    <Property Name="PICTURE" Type="image" />
+    <Property Name="ROLE" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="REGDATE" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="ACCEXPDATE" Type="date" />
+    <Property Name="STATUS" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DATE" Type="int" />
+    <Property Name="NUM_REG" Type="int" />
+    <Property Name="NUM_COMP" Type="int" />
+    <Property Name="NUM_JOB" Type="int" />
+    <Property Name="NUM_APP" Type="int" />
+    <Property Name="NUM_PAID_APP" Type="int" />
+    <Property Name="NUM_PAID_COMP" Type="int" />
+    <Property Name="NUM_VAC" Type="int" />
+    <Property Name="NUM_COMM" Type="int" />
+    <Property Name="NUM_NEWS" Type="int" />
+    <Property Name="REMARK" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vacancy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COMP_ID" Type="int" Nullable="false" />
+    <Property Name="JOB_ID" Type="int" Nullable="false" />
+    <Property Name="MIN_QUALF" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="POSTDATE" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="INTERVDATE" Type="date" Nullable="false" />
+    <Property Name="INTERVTIME" Type="time" Precision="7" Nullable="false" />
+    <Property Name="DURATION" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="SALARY" Type="money" Nullable="false" />
+    <Property Name="REQ_NUM" Type="int" Nullable="false" />
+    <Property Name="REQ_SEX" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="DESCRPTION" Type="varchar" MaxLength="40" />
+    <Property Name="STATUS" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Applicant_Register">
+    <End Role="Register" Type="Self.Register" Multiplicity="1" />
+    <End Role="Applicant" Type="Self.Applicant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Register">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Applicant">
+        <PropertyRef Name="REG_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplPayment_Applicant">
+    <End Role="Applicant" Type="Self.Applicant" Multiplicity="1" />
+    <End Role="ApplPayment" Type="Self.ApplPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ApplPayment">
+        <PropertyRef Name="APP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_Register">
+    <End Role="Register" Type="Self.Register" Multiplicity="1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Register">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="REG_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Register">
+    <End Role="Register" Type="Self.Register" Multiplicity="1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Register">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="REG_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompaPayment_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="CompaPayment" Type="Self.CompaPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CompaPayment">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Job_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Job" Type="Self.Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Job">
+        <PropertyRef Name="CAT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacancy_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="Vacancy" Type="Self.Vacancy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Vacancy">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacancy_Job">
+    <End Role="Job" Type="Self.Job" Multiplicity="1" />
+    <End Role="Vacancy" Type="Self.Vacancy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Vacancy">
+        <PropertyRef Name="JOB_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="JobBrokerModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Applicant" EntityType="Self.Applicant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApplPayment" EntityType="Self.ApplPayment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompaPayment" EntityType="Self.CompaPayment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Job" EntityType="Self.Job" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Register" EntityType="Self.Register" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Report" EntityType="Self.Report" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vacancy" EntityType="Self.Vacancy" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Applicant_Register" Association="Self.FK_Applicant_Register">
+      <End Role="Register" EntitySet="Register" />
+      <End Role="Applicant" EntitySet="Applicant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplPayment_Applicant" Association="Self.FK_ApplPayment_Applicant">
+      <End Role="Applicant" EntitySet="Applicant" />
+      <End Role="ApplPayment" EntitySet="ApplPayment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_Register" Association="Self.FK_Comment_Register">
+      <End Role="Register" EntitySet="Register" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Register" Association="Self.FK_Company_Register">
+      <End Role="Register" EntitySet="Register" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompaPayment_Company" Association="Self.FK_CompaPayment_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="CompaPayment" EntitySet="CompaPayment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Job_Category" Association="Self.FK_Job_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Job" EntitySet="Job" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacancy_Company" Association="Self.FK_Vacancy_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Vacancy" EntitySet="Vacancy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacancy_Job" Association="Self.FK_Vacancy_Job">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="Vacancy" EntitySet="Vacancy" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
